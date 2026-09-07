@@ -1,0 +1,10 @@
+==================================
+Dev Notes
+* TopDownShooter01
+
+YouTube:
+Night Run Studio
+Let's Make A Top-down Shooter/Bullet Hell/Rogue-like in Unity
+https://www.youtube.com/playlist?list=PLAK1YWc1BBZg
+
+==================================
