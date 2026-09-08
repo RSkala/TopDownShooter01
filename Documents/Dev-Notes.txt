@@ -23,6 +23,18 @@ Hierarchy -> Right-click -> 2D Object -> Tilemap -> Rectangular
 Clear a tile:
 * In the Tile Palette selection bar at the top, select Erase with Active Brush (D)
 
+Collision:
+* Add Component -> Tilemap Collider 2D
+* Add Component -> Composite Collider 2D
+  * This is so player doesn't get caught in individual tile colliders
 
+  Select the Tilemap Collider 2D -> Composite Operation -> Merge
+   * This merges all the tiles. Each section of wall is its own collider
+
+   NOTE: Adding the collider to the Tilemap automatically added a RigidBody2D to the GameObject, which by default has Gravity and Body Type is set to Dynamic. Change the Body Type to Static, as it never needs to move.
+
+Player Collision with Tilemap:
+ * After adding the above collision settings to the Tilemap, when the player bumps into the Walls, the player character spins around.
+ * Select the RigidBody2D on the Player. Go to Constraints and check Freeze Rotation Z.
 
 ==================================
