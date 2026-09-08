@@ -7,4 +7,15 @@ Night Run Studio
 Let's Make A Top-down Shooter/Bullet Hell/Rogue-like in Unity
 https://www.youtube.com/playlist?list=PLAK1YWc1BBZg
 
+Asset Packs Used:
+
 ==================================
+Sprite Size:  16x16 grid, so Pixels Per Unit should be 16
+
+Changed Sprites
+* Filter Mode: Point (no filter)
+* Format: RGBA 32 Bit
+
+
+==================================
+
