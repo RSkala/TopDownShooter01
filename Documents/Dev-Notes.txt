@@ -15,7 +15,14 @@ Sprite Size:  16x16 grid, so Pixels Per Unit should be 16
 Changed Sprites
 * Filter Mode: Point (no filter)
 * Format: RGBA 32 Bit
+==================================
+Tilemap
+
+Hierarchy -> Right-click -> 2D Object -> Tilemap -> Rectangular
+
+Clear a tile:
+* In the Tile Palette selection bar at the top, select Erase with Active Brush (D)
+
 
 
 ==================================
-
