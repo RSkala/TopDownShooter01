@@ -10,10 +10,20 @@ public class PlayerController : MonoBehaviour
     float _speed;
 
     Vector2 _moveInput;
+    int _facingDirection = 1;
 
     void Start()
     {
         
+    }
+
+    void Update()
+    {
+        if (_moveInput.x > 0.1f && _facingDirection < 0 || _moveInput.x < -0.1f && _facingDirection > 0)
+        {
+            // Pressing RIGHT while facing LEFT OR Pressing LEFT while facing RIGHT
+            Flip();
+        }
     }
 
     void FixedUpdate()
@@ -27,5 +37,13 @@ public class PlayerController : MonoBehaviour
         //Debug.Log($"OnMove - inputValue: {inputValue}");
 
         _moveInput = inputValue.Get<Vector2>();
+    }
+
+    void Flip()
+    {
+        _facingDirection *= -1;
+        Vector3 localScale = transform.localScale;
+        localScale.x = _facingDirection;
+        transform.localScale = localScale;
     }
 }
