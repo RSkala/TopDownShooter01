@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float _speed;
 
-    [ReadOnly]
-    public Vector2 _moveInput;
+    //[ReadOnly]
+    //public Vector2 _moveInput;
+
+    public Vector2 MoveInput { get; private set; }
 
     int _facingDirection = 1;
 
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (_moveInput.x > 0.1f && _facingDirection < 0 || _moveInput.x < -0.1f && _facingDirection > 0)
+        if (MoveInput.x > 0.1f && _facingDirection < 0 || MoveInput.x < -0.1f && _facingDirection > 0)
         {
             // Pressing RIGHT while facing LEFT OR Pressing LEFT while facing RIGHT
             Flip();
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rigidBody2D.linearVelocity = _moveInput * _speed;
+        _rigidBody2D.linearVelocity = MoveInput * _speed;
     }
 
     // We are using "Send Messages" in the PlayerInput component, so the method passes InputValue instead of the context
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log($"OnMove - inputValue: {inputValue}");
 
-        _moveInput = inputValue.Get<Vector2>();
+        MoveInput = inputValue.Get<Vector2>();
     }
 
     void Flip()
