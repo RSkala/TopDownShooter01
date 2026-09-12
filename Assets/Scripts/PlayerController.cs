@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float _speed;
 
-    Vector2 _moveInput;
+    [ReadOnly]
+    public Vector2 _moveInput;
+
     int _facingDirection = 1;
 
     void Start()
